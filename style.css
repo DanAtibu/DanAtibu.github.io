@@ -1,0 +1,389 @@
+@import url('https://fonts.googleapis.com/css2?family=Gemunu+Libre&family=Montserrat:wght@300&family=Open+Sans:ital,wght@1,300&family=Roboto&family=Rubik+Marker+Hatch&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@800&display=swap');
+
+
+* {
+    padding: 0rem;
+    margin: 0rem;
+    box-sizing: border-box;
+
+    /*
+    font-family: 'Gemunu Libre', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    font-family: 'Open Sans', sans-serif;
+    font-family: 'Roboto', sans-serif;
+    font-family: 'Rubik Marker Hatch', cursive;
+    */
+    font-family: var(--fontRoboto);
+}
+
+
+
+:root {
+    --error: #ef3038;
+    --bgColor: #242526;
+    --bg2Color: #3A3B3C;
+    --blue: #00b0ff;
+    /* --textColor: #E4E6EB; */
+    --textColor: white;
+    --scrollBarBgColor: #282828;
+    --subtitleColor: #B0B3B8;
+    --dividerColor: gray;
+
+    --fontOpenSans: 'Open Sans', sans-serif;
+    --fontMontserrat: 'Montserrat', sans-serif;
+    --fontGemunuLibre: 'Gemunu Libre', sans-serif;
+    --fontRubikMarkerHatch: 'Rubik Marker Hatch', sans-serif;
+    --fontRoboto: 'Roboto', sans-serif;
+    --fontPoppins: 'Poppins', sans-serif;
+}
+
+
+.flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.none {
+    display: none;
+}
+
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+
+body {
+    background-color: var(--bgColor);
+    scroll-behavior: smooth;
+    /* overflow-x: hidden; */
+    /* width: 100vw; */
+}
+
+
+header {
+    position: sticky;
+    top: 0rem;
+}
+
+#mobile_header {
+    display: none;
+}
+
+
+nav {
+    justify-content: space-between !important;
+    padding: .5rem 5rem;
+    margin: 1rem;
+    border-radius: 1rem;
+    color: var(--textColor);
+    background-color: var(--bgColor);
+}
+
+
+nav img {
+    width: 2.2rem;
+    height: 2.2rem;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+
+
+.nav-option-link {
+    margin-right: 3rem;
+}
+
+
+
+.nav-option-link a {
+    font-family: var(--fontPoppins);
+    margin-right: 1rem;
+}
+
+
+
+#nav-option-sn i {
+    margin-right: 1.1rem;
+}
+
+
+
+#intro {
+    height: 90vh;
+    overflow: hidden;
+}
+
+
+
+#into-text {
+    font-size: clamp(1.5rem, 4rem + 1vw, 8rem);
+    color: var(--textColor);
+    font-weight: bold;
+}
+
+
+:where(#into-text) p,
+span {
+    font-family: var(--fontPoppins);
+}
+
+#into-text span {
+    color: var(--blue);
+}
+
+
+
+/* =============== */
+
+.section-title {
+    white-space: nowrap;
+    margin: 1rem;
+    color: var(--textColor);
+    font-weight: bold;
+    word-spacing: .5rem;
+    font-family: var(--fontRubikMarkerHatch);
+    color: var(--blue);
+}
+
+
+
+/* ================================= */
+
+#aboutme {
+    color: var(--textColor);
+    font-size: 1.3rem;
+    padding: 5rem 10rem;
+}
+
+#aboutme img {
+    height: 20rem;
+    width: 20rem;
+    border-radius: 50%;
+    margin-right: 2rem;
+}
+
+
+#aboutme_salutation {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    font-family: var(--fontRubikMarkerHatch);
+}
+
+
+#aboutme_role {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+
+#aboutme_text {
+    font-family: var(--fontOpenSans);
+}
+
+/* ===================== */
+
+
+.section,
+.section .section-title {
+    margin-bottom: 2rem;
+}
+
+
+.experiences,
+.projects {
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+
+
+.experience {
+    background-color: var(--bg2Color);
+    color: var(--textColor);
+    border-radius: 2rem;
+    padding: 1rem;
+}
+
+
+.experience img {
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 1rem;
+}
+
+
+.exper-company-name {
+    font-weight: bold;
+}
+
+
+.exper-role-name {
+    font-family: var(--fontGemunuLibre);
+}
+
+
+/* ============================ */
+
+
+.project {
+    background-color: var(--bg2Color);
+    color: var(--textColor);
+    border-radius: .3rem;
+    height: fit-content;
+    max-width: 30vw;
+    min-width: 30vw;
+    padding: 1rem;
+    cursor: pointer;
+}
+
+
+.project img {
+    border: 0rem;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    margin-bottom: .4rem;
+}
+
+
+.project-detail {
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.project-name {
+    font-weight: bold;
+    margin-bottom: .4rem;
+}
+
+
+.project-role {
+    font-family: var(--fontGemunuLibre);
+}
+
+
+.project-year {
+    background-color: var(--blue);
+    color: var(--textColor);
+    padding: 0.5rem 1rem;
+    border-radius: 1rem;
+}
+
+
+
+
+/* ============================= */
+#contact {
+    width: 100%;
+}
+
+
+.contact {
+    background-color: var(--bg2Color);
+    color: var(--textColor);
+    border-radius: 0.5rem;
+    padding: 1rem;
+    border-bottom: .2rem solid var(--blue);
+}
+
+.contact p {
+    font-family: var(--fontOpenSans);
+}
+
+.contact-name {
+    font-family: var(--fontRoboto) !important;
+    font-weight: bold;
+    margin-bottom: .5rem;
+    color: var(--blue);
+}
+
+
+
+
+/* ================================== */
+
+
+
+#dm_me {
+    font-family: var(--fontRoboto);
+    color: var(--textColor);
+    padding: 3rem;
+}
+
+#dm_me_title {
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+#dm_me_title,
+#dm_me_text {
+    margin-bottom: 2rem;
+}
+
+#dm_me_social_network {
+    flex-wrap: wrap;
+    word-spacing: 0.3rem;
+}
+
+
+#dm_me_social_network span {
+    margin-right: 2rem;
+}
+
+/* ========================================= */
+
+#skills {
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 5rem;
+    color: var(--textColor);
+    padding: 3rem;
+}
+
+.skill-category {
+    margin-bottom: 1rem;
+}
+
+.skill-category-name {
+    color: var(--blue) !important;
+    font-weight: bold;
+    margin-bottom: 2rem;
+    padding-bottom: 0.5rem;
+    width: fit-content;
+    border-bottom: .3rem solid var(--blue);
+}
+
+.skill-category-list {
+    justify-content: flex-start;
+    gap: 2rem;
+}
+
+.skill img {
+    width: 5rem;
+    height: 5rem;
+    object-fit: cover;
+}
+
+/* ========================================= */
+
+
+footer {
+    background-color: var(--bg2Color);
+    color: var(--textColor);
+    padding: 1rem;
+    justify-content: space-between !important;
+}
+
+
+footer p {
+    font-weight: bold;
+    font-family: var(--fontMontserrat) !important;
+}

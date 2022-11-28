@@ -1,0 +1,164 @@
+@media (max-width: 725px) {
+
+    #mobile_header {
+        display: initial;
+    }
+
+    #desktop_header {
+        display: none;
+    }
+
+    nav {
+        margin: 0rem;
+        border-radius: 0rem;
+    }
+
+    #mobile_header {
+        position: sticky;
+        top: 0;
+    }
+
+    #mobile_nav {
+        justify-content: space-between;
+        padding: 1rem 0.5rem;
+    }
+
+    #mobile_nav #nav-option-sn i {
+        font-size: 1.4rem;
+    }
+
+    #nav_more_options {
+        font-size: 1.8rem;
+    }
+
+    #nav_modal {
+        position: relative;
+    }
+
+    .nav-option-link {
+        position: absolute;
+        flex-direction: column;
+        background-color: var(--bgColor);
+        color: var(--textColor);
+        text-align: center;
+        border-top: 0.1rem solid var(--bg2Color);
+        width: 100%;
+        transition: all 2s ease-in-out;
+    }
+
+    .nav-option-link a {
+        padding: 1rem;
+        width: 100%;
+        border-bottom: 0.1rem solid var(--bg2Color);
+    }
+
+
+
+
+
+    section {
+        overflow-x: hidden;
+        width: 100vw;
+    }
+
+
+
+
+
+    #into-text {
+        text-align: center;
+        font-size: clamp(1.5rem, 3.4rem + 1vw, 8rem);
+    }
+
+
+
+    #aboutme {
+        flex-wrap: wrap;
+        padding: 0rem 1rem !important;
+    }
+
+    #aboutme img {
+        margin-bottom: 1rem;
+    }
+
+
+
+
+
+
+
+    #skills {
+        justify-content: flex-start;
+    }
+
+    .skill-category-list {
+        flex-wrap: wrap;
+    }
+
+    .skill img {
+        width: 3rem;
+        height: 3rem;
+    }
+
+
+
+
+
+
+
+
+
+
+
+    .experience {
+        width: 100%;
+    }
+
+    .experience_list {
+        padding: 0.5rem;
+    }
+
+
+
+
+
+
+
+
+
+    .project {
+        min-width: 100vw;
+    }
+
+
+
+
+
+    .contact_list {
+        padding: 0.5rem;
+    }
+
+    .contact {
+        width: 100%;
+        border: 0.2rem solid var(--blue);
+    }
+
+
+
+
+
+
+
+
+    #dm_me {
+        padding: 0rem;
+    }
+
+    #dm_me_social_network {
+        justify-content: flex-start;
+    }
+
+    #dm_me_social_network a {
+        margin: 1rem;
+    }
+}
