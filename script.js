@@ -5,6 +5,9 @@ const defaultLink = "https://images.pexels.com/photos/1509534/pexels-photo-15095
 function Project({ name, role, image, year, link = defaultLink }) {
     return <div className="project" onClick={e => {
         e.stopPropagation();
+        if (!link) {
+            return alert("This project is not a public project!");
+        }
         window.open(link, "_blank");
     }}>
         <img src={image} />
@@ -30,18 +33,24 @@ function ListProject() {
             role: "Fullstack Developer & System Designer",
             image: "https://res.cloudinary.com/dl6s23xuz/image/upload/v1668304786/DanAtibu/Capture_d_%C3%A9cran_2022-11-13_025905_zjvuxa.png",
             year: 2022,
-            link: "https://mticket.madosgroup.com"
+            link: ""
         },
+        // {
+        //     name: "ONPR Blog",
+        //     role: "Backend Developer",
+        //     image: "https://res.cloudinary.com/dl6s23xuz/image/upload/v1668304786/DanAtibu/Capture_d_%C3%A9cran_2022-11-13_025905_zjvuxa.png",
+        //     year: 2022,
+        //     link: "https://onpr.donexa.org"
+        // },
+        // { name: "Bank Online Payment", role: "Fullstack Developer", link: "" },
+        // { name: "National Identification Server", role: "Backend Engineer & System Designer", link: "" },
         {
-            name: "ONPR Blog",
-            role: "Backend Developer",
-            image: "https://res.cloudinary.com/dl6s23xuz/image/upload/v1668304786/DanAtibu/Capture_d_%C3%A9cran_2022-11-13_025905_zjvuxa.png",
+            name: "MFarm",
+            role: "Fullstack Developer & System Designer",
+            image: "https://res.cloudinary.com/dl6s23xuz/image/upload/v1669748044/DanAtibu/Capture_d_%C3%A9cran_2022-11-29_191446_byzqtz.png",
             year: 2022,
-            link: "https://onpr.donexa.org"
-        },
-        { name: "Bank Online Payment", role: "Fullstack Developer", link: "" },
-        { name: "National Identification Server", role: "Backend Engineer & System Designer", link: "" },
-        { name: "MFame", role: "Fullstack Developer & System Designer", link: "https://mfarm.madosgroup.com" }
+            link: "https://mfarm.madosgroup.com"
+        }
     ]);
     return <div className="projects flex">
         {List.map(_ => <Project key={_.name} {..._} />)}
@@ -51,18 +60,19 @@ function ListProject() {
 
 
 function Contact({ name, responsability, email, phone }) {
+    const empty = "--------------";
     return <div className="contact">
         <p className="contact-name">{name}</p>
         <p>{responsability}</p>
-        <p>{email} | {phone}</p>
+        <p>Email: {email || empty} | Phone: {phone || empty}</p>
     </div>
 };
 function ListContact() {
     const [List, setList] = React.useState([
-        { name: "Mr Jean Claude MandatVille", responsability: "CEO ( Italian Room )", email: "jdmandat243@gmail.com", phone: "+243403490349" },
-        { name: "Mr Erick Maomba", responsability: "CEO ( Italian Room )", email: "jdmandat243@gmail.com", phone: "+243403490349" },
-        { name: "Mr David Bahati", responsability: "Professeur ( IUE )", email: "davidbahati@gmail.com", phone: "+243403490349" },
-        { name: "Mr Jean De Dieu", responsability: "CEO ( MadosGroup )", email: "jdmandat243@gmail.com", phone: "+243403490349" },
+        { name: "Mr Jean Claude MandatVille", responsability: "CEO ( Italian Room )", email: "", phone: "+257 69571878" },
+        { name: "Mr Erick Maomba", responsability: "Agent At DGM", email: "", phone: "+243 994308800" },
+        { name: "Mr David Bahati", responsability: "Teacher at ( IUE )", email: "", phone: "+257 69394506" },
+        { name: "Mr Jean De Dieu", responsability: "CEO ( MadosGroup )", email: "", phone: "+27 671891079" },
     ]);
     return <div className="experiences contact_list flex">
         {List.map(_ => <Contact key={_.name} {..._} />)}
@@ -74,9 +84,16 @@ function ListContact() {
 function Experience({
     company,
     role,
-    logo = defaultLink
+    logo = defaultLink,
+    link
 }) {
-    return <div className="experience flex">
+    return <div className="experience flex" onClick={e => {
+        e.stopPropagation();
+        if (!link) {
+            return alert("No Link");
+        }
+        window.open(link, "_blank");
+    }}>
         <img src={logo} />
         <div>
             <p className="exper-company-name">{company}</p>
@@ -86,10 +103,10 @@ function Experience({
 };
 function ListExperience() {
     const [List, setList] = React.useState([
-        { company: "Direction Générale De Migration ( DGM )", role: "IT Controler", logo: "https://evisa.gouv.cd/images/dgm-logo.png" },
-        { company: "Chambre de commerce Italian Market", role: "Fullstack Developer" },
-        { company: "Mados Group Inc", role: "Fullstack Developer & System Designer", logo: "https://madosgroup.com/assets/img/logo.png" },
-        { company: "Donexa", role: "Fullstack Developer & System Designer" }
+        { company: "Direction Générale De Migration ( DGM )", role: "IT Controler", link: "", logo: "https://evisa.gouv.cd/images/dgm-logo.png" },
+        { company: "Chambre de commerce Italian Market", role: "Fullstack Developer", link: "https://www.italcham.co.za", logo: "" },
+        { company: "Mados Group Inc", role: "Fullstack Developer & System Designer", link: "https://madosgroup.com/", logo: "https://madosgroup.com/assets/img/logo.png" },
+        { company: "Donexa", role: "Fullstack Developer & System Designer", link: "https://donexa.org", logo: "https://donexa.org/assets/images/logo.png" }
     ]);
     return <div className="experiences experience_list flex">
         {List.map(_ => <Experience key={_.company} {..._} />)}
