@@ -2,7 +2,7 @@ const defaultLink = "https://images.pexels.com/photos/1509534/pexels-photo-15095
 
 
 
-function Project({ name, role, image, year, link = defaultLink }) {
+function Project({ name, role, image = defaultLink, year, link }) {
     return <div className="project" onClick={e => {
         e.stopPropagation();
         if (link) {
@@ -46,19 +46,22 @@ function ListProject() {
             name: "ONPR Blog",
             role: "Backend Developer",
             year: 2022,
-            image: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png"
+            image: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png",
+            link: ""
         },
         {
             name: "Bank Online Payment",
             role: "Fullstack Developer",
             year: 2021,
-            image: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png"
+            image: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png",
+            link: ""
         },
         {
             name: "National Identification Server",
             role: "Backend Engineer & System Designer",
             year: 2022,
-            image: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png"
+            image: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png",
+            link: ""
         }
     ]);
     return <div className="projects flex">
