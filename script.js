@@ -5,10 +5,10 @@ const defaultLink = "https://images.pexels.com/photos/1509534/pexels-photo-15095
 function Project({ name, role, image, year, link = defaultLink }) {
     return <div className="project" onClick={e => {
         e.stopPropagation();
-        if (!link) {
-            return alert("This project is not a public project!");
+        if (link) {
+            return window.open(link, "_blank");
         }
-        window.open(link, "_blank");
+       alert("This project is not accessible for the public, it is internal for a company 😔 !");
     }}>
         <img src={image} />
         <div className="project-detail flex">
